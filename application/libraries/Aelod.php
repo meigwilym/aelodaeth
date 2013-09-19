@@ -290,6 +290,10 @@ class Aelod {
 		return $this->CI->load->view('aelodaeth/index', $data, true);
 	)
 	
+	/**
+	 * Show report table
+	 * 
+	 */
 	public function showReports($data = null)
 	{
 		return $this->CI->load->view('aelodaeth/reports', $data, true);
