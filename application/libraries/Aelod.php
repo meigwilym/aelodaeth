@@ -19,6 +19,7 @@ class Aelod {
         $this->CI->load->model('Subs_model', 'subs');
         $this->CI->load->model('Membership_type_model', 'm_types');
         $this->CI->load->model('Group_model', 'groups');
+		$this->CI->load->model('aelodaeth', true); 
     }
     
     /**
@@ -309,12 +310,14 @@ class Aelod {
         $member = $this->CI->subs->get($id);
         
         $this->CI->load->library('email');
+		
+		$this->CI->email->clear();
         
-        $this->CI->email->from('info@clwbrgbicaernarfon', 'Clwb Rygbi Caernarfon');
+        $this->CI->email->from($this->CI->config->item('email_address', 'aelodaeth'), $this->CI->config->item('email_from', 'aelodaeth'));
         $this->CI->email->to($member->email);
-        $this->CI->email->cc('info@clwbrgbicaernarfon');
+        $this->CI->email->cc($this->CI->config->item('email_address', 'aelodaeth'));
 
-        $this->CI->email->subject('Cais am Aelodaeth / Membership Request');
+        $this->CI->email->subject($this->CI->config->item('subject_rec', 'aelodaeth'));
         
         $msg = "{$member->first_name} {$member->last_name},
 
@@ -346,12 +349,14 @@ Clwb Rygbi Caernarfon";
         $member = $this->CI->subs->get($id);
         
         $this->CI->load->library('email');
+		
+		$this->CI->email->clear();
         
-        $this->CI->email->from('info@clwbrgbicaernarfon', 'Clwb Rygbi Caernarfon');
+        $this->CI->email->from($this->CI->config->item('email_address', 'aelodaeth'), $this->CI->config->item('email_from', 'aelodaeth'));
         $this->CI->email->to($member->email);
-        $this->CI->email->cc('alion@alion.plus.com', 'info@clwbrgbicaernarfon');
+        $this->CI->email->cc($this->CI->config->item('email_address', 'aelodaeth'));
 
-        $this->CI->email->subject('Aelodaeth / Membership');
+        $this->CI->email->subject($this->CI->config->item('subject_conf', 'aelodaeth'));
         
         $expiry = date('d/m/Y', strtotime($member->ends_on));
         
