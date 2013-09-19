@@ -26,9 +26,10 @@ Presently not a huge problem, but I hope to sort this for next season.
 ### ToDo
 
 * Password & security
-* Reduce the HTML to a minimum. 
+* Proper documentation
+* Reduce the HTML to a minimum
 * Move more variables to config
-* Test! It's had plenty of testing within the original project, but this hasn't 
+* Test! It's had plenty of testing within the original project, but this hasn't had any (yet)
 
 ### Club specific functions
 
