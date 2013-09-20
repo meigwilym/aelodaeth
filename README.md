@@ -5,7 +5,7 @@ A membership library for CodeIgniter.
 
 This library was originally developed for http://clwbrygbicaernarfon.co.uk, i.e. Clwb Rygbi Caernarfon Rugby Club's website. 
 
-### Dependacies
+### Dependencies
 
 The HTML was based on Bootstrap and used the Metis administration theme. 
 
